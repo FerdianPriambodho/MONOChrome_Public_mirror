@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     int currentHealth;
 
     public Animator animator;
-
+    //public GameObject deathEffect;
     void Start()
     {
         currentHealth = maxHealth;    
@@ -34,5 +34,9 @@ public class Enemy : MonoBehaviour
 
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
+
+        //to further animate death
+        /*Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);*/
     }
 }
