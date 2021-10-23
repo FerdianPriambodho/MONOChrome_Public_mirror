@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,10 +12,17 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMove = 0f;
     bool jump = false;
     //bool crouch = false;
+
+#if UNITY_EDITOR
+    
+ #elif UNITY_ANDROID
+    
+#endif
+
     void Update()
     {
 
-        horizontalMove = Input.GetAxisRaw("Horizontal")*runSpeed;
+        horizontalMove = CrossPlatformInputManager.GetAxisRaw("Horizontal")*runSpeed;
 
         animator.SetFloat("speed", Mathf.Abs(horizontalMove));
 
