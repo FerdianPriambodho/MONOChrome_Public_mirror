@@ -17,7 +17,7 @@ public class DialogController : MonoBehaviour
     //Set text function
     public string setSpeaker()
     {
-        if (lineWord[lineWordIndex] == "Player") return GameSetting.Player.name;
+        if (lineWord[lineWordIndex].Contains("Player")) return GameSetting.Player.name;
         else return lineWord[lineWordIndex];
     }
 

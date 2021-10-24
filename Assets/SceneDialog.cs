@@ -10,7 +10,7 @@ public class SceneDialog : DialogController
     public Text SpeakerBox;
     public Text DialogBox;
     public List<GameObject> Avatar;
-    
+
     int indextTemp;
 
     private void Start()
@@ -26,7 +26,10 @@ public class SceneDialog : DialogController
         }
         for (int i=0;i< Avatar.Count; i++)
         {
-            if (Avatar[i].name == SpeakerBox.text)
+            if (SpeakerBox.text == GameSetting.Player.name)
+            {
+                indextTemp = 0;
+            } else if(Avatar[i].name == SpeakerBox.text)
             {
                 indextTemp = i;
             }
@@ -51,10 +54,13 @@ public class SceneDialog : DialogController
         }
         for (int i = 0; i < Avatar.Count; i++)
         {
-            if (SpeakerBox.text.Contains(Avatar[i].name))
+            if (SpeakerBox.text.Contains(GameSetting.Player.name))
             {
-                indextTemp = i;
+                indextTemp = 0;
                 break;
+            } else if (SpeakerBox.text.Contains(SpeakerBox.text))
+            {
+                indextTemp = 1;
             }
         }
         Avatar[indextTemp].SetActive(true);

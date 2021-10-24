@@ -1,12 +1,12 @@
-Greg
+Player
 Well hellow adventurer! Welcome to the town of honneywood where everything's begin.
-Baelin
+NPC
 Morning! Nice day for fishing ain't it? Huh hah!
-Greg
+Player
 How do you do Baelin?
-Baelin
+NPC
 Nice day for fishin' ain't it?
-Greg
+Player
 Yes Baelin, its a nice day for fishin
-Baelin
+NPC
 Morning! Huh Hah...
