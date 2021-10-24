@@ -16,7 +16,7 @@ public class SceneDialog : DialogController
     private void Start()
     {
         this.setDialogFile(Dialog);
-        //SpeakerBox.text = setSpeaker();
+        SpeakerBox.text = setSpeaker();
         DialogBox.text = setTextDialog();
 
         //Set Avatar (Temporary)
@@ -41,7 +41,7 @@ public class SceneDialog : DialogController
             this.gameObject.SetActive(false);
             return;
         }
-        //SpeakerBox.text = setSpeaker();
+        SpeakerBox.text = setSpeaker();
         DialogBox.text = setTextDialog();
 
         //Set Avatar (Temporary)

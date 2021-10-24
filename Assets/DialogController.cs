@@ -15,11 +15,11 @@ public class DialogController : MonoBehaviour
     }
 
     //Set text function
-    /*public string setSpeaker()
+    public string setSpeaker()
     {
-        if (lineWord[lineWordIndex] == "Player") return GameSetting.character.name;
+        if (lineWord[lineWordIndex] == "Player") return GameSetting.Player.name;
         else return lineWord[lineWordIndex];
-    }*/
+    }
 
     public string setTextDialog()
     {

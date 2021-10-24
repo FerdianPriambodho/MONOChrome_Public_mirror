@@ -7,21 +7,18 @@ public class PlayerInteract : MonoBehaviour
 {
     public Transform interactPoint;
     public float interactRange = 0.5f;
-    public GameObject DialogCanvas;
-    public GameObject dialogWindow;
     Collider2D npc;
 
     void Update()
     {
         if (npc != null)
         {
-            Debug.Log("NPC not null");
             if (CrossPlatformInputManager.GetButtonDown("Melee"))
             {
-                dialogWindow.SetActive(true);
+                Debug.Log("Button pressed on Player");
+                npc.GetComponent<NPC>().dialog.SetActive(true);
             }
         }
-        else Debug.Log("NPC is null");
     }
 
     private void OnDrawGizmosSelected()
@@ -35,7 +32,7 @@ public class PlayerInteract : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Colide with " + collision.name);
+        //Debug.Log("Colide with " + collision.name);
         if(LayerMask.LayerToName(collision.gameObject.layer) == "NPC")
         {
             npc = collision;

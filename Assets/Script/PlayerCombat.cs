@@ -9,6 +9,7 @@ public class PlayerCombat : MonoBehaviour
 
     public Transform attackPoint;
     public LayerMask enemyLayers;
+    Collider2D npc;
 
     public float attackRange = 0.5f;
     public int attackDammage = 40;
@@ -22,6 +23,7 @@ public class PlayerCombat : MonoBehaviour
         {
             if (CrossPlatformInputManager.GetButtonDown("Melee"))
             {
+                if (npc != null) return;
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
             }
@@ -50,5 +52,22 @@ public class PlayerCombat : MonoBehaviour
             return;
         }
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Debug.Log("Colide with " + collision.name);
+        if (LayerMask.LayerToName(collision.gameObject.layer) == "NPC")
+        {
+            npc = collision;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (LayerMask.LayerToName(collision.gameObject.layer) == "NPC")
+        {
+            npc = null;
+        }
     }
 }

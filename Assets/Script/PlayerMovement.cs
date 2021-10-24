@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("speed", Mathf.Abs(horizontalMove));
 
-        if (Input.GetButtonDown("Jump"))
+        if (CrossPlatformInputManager.GetButtonDown("Jump"))
         {
             jump = true;
             animator.SetBool("isJumping", true);
