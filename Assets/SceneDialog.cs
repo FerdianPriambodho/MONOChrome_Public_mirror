@@ -11,6 +11,8 @@ public class SceneDialog : DialogController
     public Text DialogBox;
     public List<GameObject> Avatar;
 
+    public bool indexCheck=true;
+
     int indextTemp;
 
     private void Start()
@@ -39,6 +41,7 @@ public class SceneDialog : DialogController
 
     public void FixedUpdate()
     {
+        indexCheck = this.indexCheck();
         if (indexCheck())
         {
             this.gameObject.SetActive(false);

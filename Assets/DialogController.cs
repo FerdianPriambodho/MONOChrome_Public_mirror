@@ -28,8 +28,8 @@ public class DialogController : MonoBehaviour
 
     public bool indexCheck()
     {
-        Debug.Log(lineWordIndex);
-        Debug.Log(lineWord.Length);
+        //Debug.Log(lineWordIndex);
+        //Debug.Log(lineWord.Length);
         if (lineWordIndex < lineWord.Length-1) return false;
         else return true;
     }
