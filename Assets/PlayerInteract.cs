@@ -13,7 +13,7 @@ public class PlayerInteract : MonoBehaviour
     {
         if (npc != null)
         {
-            if (CrossPlatformInputManager.GetButtonDown("Melee"))
+            if (CrossPlatformInputManager.GetButtonDown("Melee") || Input.GetButtonDown("Melee"))
             {
                 Debug.Log("Button pressed on Player");
                 npc.GetComponent<NPC>().dialog.SetActive(true);

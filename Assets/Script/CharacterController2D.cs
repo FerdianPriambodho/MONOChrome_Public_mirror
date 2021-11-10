@@ -74,7 +74,7 @@ public class CharacterController2D : MonoBehaviour
 		}
 
 		//only control the player if grounded or airControl is turned on
-		if (m_Grounded || m_AirControl)
+		if (m_Grounded || !m_AirControl)
 		{
 
 			// If crouching
@@ -129,8 +129,15 @@ public class CharacterController2D : MonoBehaviour
 		{
 			// Add a vertical force to the player.
 			m_Grounded = false;
-			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+			m_Rigidbody2D.AddForce(new Vector2(move*10f, m_JumpForce));
 		}
+
+
+		// Ability: leap Wrap; Turn !m_AirControl to m_AirControl first
+		/*if (!m_Grounded)
+        {
+			m_Rigidbody2D.AddForce(new Vector2(move * 100f, 0f));
+        }*/
 	}
 
 

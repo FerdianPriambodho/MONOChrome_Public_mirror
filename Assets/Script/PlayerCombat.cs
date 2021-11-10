@@ -21,7 +21,7 @@ public class PlayerCombat : MonoBehaviour
     {
         if(Time.time >= nextAttackTime)
         {
-            if (CrossPlatformInputManager.GetButtonDown("Melee"))
+            if (CrossPlatformInputManager.GetButtonDown("Melee") || Input.GetButtonDown("Melee"))
             {
                 if (npc != null) return;
                 Attack();

@@ -22,11 +22,11 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        horizontalMove = CrossPlatformInputManager.GetAxisRaw("Horizontal")*runSpeed;
+        horizontalMove = Input.GetAxisRaw("Horizontal")*runSpeed;
 
         animator.SetFloat("speed", Mathf.Abs(horizontalMove));
 
-        if (CrossPlatformInputManager.GetButtonDown("Jump"))
+        if (CrossPlatformInputManager.GetButtonDown("Jump") || Input.GetButtonDown("Jump"))
         {
             jump = true;
             animator.SetBool("isJumping", true);
